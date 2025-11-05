@@ -1,7 +1,23 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import "./css/Tarefa.css"
 import { useState } from "react"
+import useTarefa from "../hooks/useTarefa"
 const TelaTarefaDetalhes = ()=> {
+
+const {alterar_tarefa} = useTarefa()
+
+const handle_buttonClick_alterar = () => {
+const tarefa_editada = {
+...tarefa,
+titulo: input_tituloTarefa,
+finalizada: radio_finalizada
+}
+
+alterar_tarefa(tarefa_editada)
+
+navigate("/")
+
+}
 
 const location = useLocation()
 const tarefa =  location.state || {}
@@ -74,7 +90,7 @@ Não
 </div>
 
 <button onClick={() =>{
-alert("Em breve função para alterar tarefa")
+handle_buttonClick_alterar()
 }}>
 Alterar
 </button>
