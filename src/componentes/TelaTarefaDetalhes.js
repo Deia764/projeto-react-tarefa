@@ -2,9 +2,10 @@ import { useLocation, useNavigate } from "react-router-dom"
 import "./css/Tarefa.css"
 import { useState } from "react"
 import useTarefa from "../hooks/useTarefa"
+import useTarefa_postgresql from "../hooks/useTarefa_postgresql"
 const TelaTarefaDetalhes = ()=> {
 
-const {alterar_tarefa} = useTarefa()
+const {alterar_tarefa} = useTarefa_postgresql()
 
 const handle_buttonClick_alterar = () => {
 const tarefa_editada = {

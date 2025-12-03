@@ -1,9 +1,10 @@
 import useTarefa from "../hooks/useTarefa";
+import useTarefa_postgresql from "../hooks/useTarefa_postgresql";
 import "./css/Tarefa.css";
 import FormCadTarefa from "./FormCadTarefa";
 
 const TelaTarefa = () => {
-const {listaTarefas, adicionar_tarefa, exibirMensagem, excluir_tarefa, exibir_detalhes_tarefa} = useTarefa();
+const {listaTarefas, adicionar_tarefa,  excluir_tarefa, exibir_detalhes_tarefa} = useTarefa_postgresql();
 return (
 <>
 <h1 style={{textAlign:"center"}} tabIndex={1}>Minhas tarefas</h1>
